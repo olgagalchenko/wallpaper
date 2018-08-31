@@ -8,18 +8,71 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIPageViewController {
 
+    var orderedViewControllers: [PhotoViewController] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.getCuratedPhotos()
+        self.dataSource = self
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func getCuratedPhotos() {
+        Photo.curatedPhotos { (photos) in
+            
+            DispatchQueue.main.async {
+                let photoViewControllers: [PhotoViewController] = photos.map({ (photo) -> PhotoViewController in
+                    PhotoViewController(url: photo.url)
+                })
+            
+                self.setViewControllers([photoViewControllers[0]], direction: .forward, animated: false, completion: nil)
+                self.orderedViewControllers = photoViewControllers
+            }
+        }
     }
-
-
 }
 
+extension ViewController: UIPageViewControllerDataSource {
+    
+    func presentationCount(for pageViewController: UIPageViewController) -> Int {
+        return self.orderedViewControllers.count
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        
+        guard let viewControllerIndex = orderedViewControllers.index(of: viewController as! PhotoViewController) else {
+            return nil
+        }
+        
+        let nextIndex = viewControllerIndex + 1
+        
+        guard orderedViewControllers.count != nextIndex else {
+            return orderedViewControllers.first
+        }
+        
+        guard orderedViewControllers.count > nextIndex else {
+            return nil
+        }
+        
+        return orderedViewControllers[nextIndex]
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        guard let viewControllerIndex = orderedViewControllers.index(of: viewController as! PhotoViewController) else {
+            return nil
+        }
+        
+        let previousIndex = viewControllerIndex - 1
+        
+        guard previousIndex >= 0 else {
+            return orderedViewControllers.last
+        }
+        
+        guard orderedViewControllers.count > previousIndex else {
+            return nil
+        }
+        
+        return orderedViewControllers[previousIndex]
+    }
+}

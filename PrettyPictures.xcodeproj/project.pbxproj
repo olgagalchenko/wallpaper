@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		93C72E112137B0D70076307C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C72E102137B0D70076307C /* AppDelegate.swift */; };
 		93C72E132137B0D70076307C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C72E122137B0D70076307C /* ViewController.swift */; };
-		93C72E162137B0D70076307C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93C72E142137B0D70076307C /* Main.storyboard */; };
 		93C72E182137B0D90076307C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93C72E172137B0D90076307C /* Assets.xcassets */; };
-		93C72E1B2137B0D90076307C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93C72E192137B0D90076307C /* LaunchScreen.storyboard */; };
 		93C72E262137B0D90076307C /* PrettyPicturesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C72E252137B0D90076307C /* PrettyPicturesTests.swift */; };
 		93C72E312137B0D90076307C /* PrettyPicturesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C72E302137B0D90076307C /* PrettyPicturesUITests.swift */; };
+		93C72E3F2137B1800076307C /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C72E3E2137B1800076307C /* Photo.swift */; };
+		93C72E422137D6ED0076307C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93C72E402137D6ED0076307C /* LaunchScreen.storyboard */; };
+		93C72E442137DED80076307C /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C72E432137DED80076307C /* PhotoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,9 +38,7 @@
 		93C72E0D2137B0D70076307C /* PrettyPictures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrettyPictures.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93C72E102137B0D70076307C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93C72E122137B0D70076307C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		93C72E152137B0D70076307C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		93C72E172137B0D90076307C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		93C72E1A2137B0D90076307C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93C72E1C2137B0D90076307C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93C72E212137B0D90076307C /* PrettyPicturesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrettyPicturesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93C72E252137B0D90076307C /* PrettyPicturesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrettyPicturesTests.swift; sourceTree = "<group>"; };
@@ -47,6 +46,9 @@
 		93C72E2C2137B0D90076307C /* PrettyPicturesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrettyPicturesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93C72E302137B0D90076307C /* PrettyPicturesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrettyPicturesUITests.swift; sourceTree = "<group>"; };
 		93C72E322137B0D90076307C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93C72E3E2137B1800076307C /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		93C72E412137D6ED0076307C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		93C72E432137DED80076307C /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +99,13 @@
 		93C72E0F2137B0D70076307C /* PrettyPictures */ = {
 			isa = PBXGroup;
 			children = (
+				93C72E402137D6ED0076307C /* LaunchScreen.storyboard */,
 				93C72E102137B0D70076307C /* AppDelegate.swift */,
 				93C72E122137B0D70076307C /* ViewController.swift */,
-				93C72E142137B0D70076307C /* Main.storyboard */,
 				93C72E172137B0D90076307C /* Assets.xcassets */,
-				93C72E192137B0D90076307C /* LaunchScreen.storyboard */,
 				93C72E1C2137B0D90076307C /* Info.plist */,
+				93C72E3E2137B1800076307C /* Photo.swift */,
+				93C72E432137DED80076307C /* PhotoViewController.swift */,
 			);
 			path = PrettyPictures;
 			sourceTree = "<group>";
@@ -229,9 +232,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93C72E1B2137B0D90076307C /* LaunchScreen.storyboard in Resources */,
+				93C72E422137D6ED0076307C /* LaunchScreen.storyboard in Resources */,
 				93C72E182137B0D90076307C /* Assets.xcassets in Resources */,
-				93C72E162137B0D70076307C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +258,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93C72E3F2137B1800076307C /* Photo.swift in Sources */,
+				93C72E442137DED80076307C /* PhotoViewController.swift in Sources */,
 				93C72E132137B0D70076307C /* ViewController.swift in Sources */,
 				93C72E112137B0D70076307C /* AppDelegate.swift in Sources */,
 			);
@@ -293,18 +297,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		93C72E142137B0D70076307C /* Main.storyboard */ = {
+		93C72E402137D6ED0076307C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				93C72E152137B0D70076307C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		93C72E192137B0D90076307C /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				93C72E1A2137B0D90076307C /* Base */,
+				93C72E412137D6ED0076307C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
