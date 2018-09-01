@@ -38,25 +38,41 @@ extension Photo {
 extension Photo {
     
     static func curatedPhotos(completion: @escaping ([Photo]) -> Void) {
-        var unsplashUrlComponents = URLComponents(string: "https://api.unsplash.com/photos/curated")!
-        let clientId = URLQueryItem(name: "client_id", value: "44291bad7b832bd9c8710bf904f2d8d0cfaa20a89779023c580c0658b839a3b2")
-        unsplashUrlComponents.queryItems = [clientId]
-        let unsplashUrl = unsplashUrlComponents.url!
         
-        URLSession.shared.dataTask(with: unsplashUrl) { (data, _, _) in
+        let curatedPhotosRequest = PhotoCuratedListRequest()
+        let photosAPI = PhotoAPI()
+        
+        URLSession.shared.dataTask(with: curatedPhotosRequest.url) { (data, _, _) in
             
-            var photos: [Photo] = []
-            if let data = data,
-            let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [[String: Any]] {
-                for case let result in json! {
-                    if let photo = Photo(json: result) {
-                        photos.append(photo)
-                    }
-                }
-            }
-            
+            let photos: [Photo] = photosAPI.deserialize(data: data)
             completion(photos)
             
         }.resume()
+    }
+}
+
+protocol APIDispatcher {
+    associatedtype T
+    func deserialize(data: Data?) -> T
+}
+
+class PhotoAPI: APIDispatcher {
+    
+    typealias T = [Photo]
+    
+    func deserialize(data: Data?) -> [Photo] {
+        
+        var photos: [Photo] = []
+
+        if let data = data,
+            let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [[String: Any]] {
+            for case let result in json! {
+                if let photo = Photo(json: result) {
+                    photos.append(photo)
+                }
+            }
+        }
+        
+        return photos
     }
 }

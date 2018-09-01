@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		93422EDA213B47B100254244 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93422ED9213B47B100254244 /* APIRequest.swift */; };
+		93422EDC213B47F300254244 /* PhotoCuratedListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93422EDB213B47F300254244 /* PhotoCuratedListRequest.swift */; };
 		93C72E112137B0D70076307C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C72E102137B0D70076307C /* AppDelegate.swift */; };
 		93C72E132137B0D70076307C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C72E122137B0D70076307C /* ViewController.swift */; };
 		93C72E182137B0D90076307C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93C72E172137B0D90076307C /* Assets.xcassets */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		93422ED9213B47B100254244 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		93422EDB213B47F300254244 /* PhotoCuratedListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCuratedListRequest.swift; sourceTree = "<group>"; };
 		93C72E0D2137B0D70076307C /* PrettyPictures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrettyPictures.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93C72E102137B0D70076307C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93C72E122137B0D70076307C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +110,8 @@
 				93C72E1C2137B0D90076307C /* Info.plist */,
 				93C72E3E2137B1800076307C /* Photo.swift */,
 				93C72E432137DED80076307C /* PhotoViewController.swift */,
+				93422ED9213B47B100254244 /* APIRequest.swift */,
+				93422EDB213B47F300254244 /* PhotoCuratedListRequest.swift */,
 			);
 			path = PrettyPictures;
 			sourceTree = "<group>";
@@ -261,7 +267,9 @@
 				93C72E3F2137B1800076307C /* Photo.swift in Sources */,
 				93C72E442137DED80076307C /* PhotoViewController.swift in Sources */,
 				93C72E132137B0D70076307C /* ViewController.swift in Sources */,
+				93422EDA213B47B100254244 /* APIRequest.swift in Sources */,
 				93C72E112137B0D70076307C /* AppDelegate.swift in Sources */,
+				93422EDC213B47F300254244 /* PhotoCuratedListRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -26,7 +26,10 @@ class ViewController: UIPageViewController {
                     PhotoViewController(url: photo.url)
                 })
             
-                self.setViewControllers([photoViewControllers[0]], direction: .forward, animated: false, completion: nil)
+                guard let firstPhotoVC = photoViewControllers.first else {
+                    return
+                }
+                self.setViewControllers([firstPhotoVC], direction: .forward, animated: false, completion: nil)
                 self.orderedViewControllers = photoViewControllers
             }
         }
